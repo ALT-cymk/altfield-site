@@ -1,6 +1,6 @@
 # Altfield landing page
 
-A single static page served by GitHub Pages at https://altfield.nkd.ie
+A single static page served by GitHub Pages at https://altfield.io
 
 It is one self-contained HTML file: the images are inlined as data URIs, so
 there is nothing to configure on the host and the page loads in one request.
