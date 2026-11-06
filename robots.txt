@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Assistants are welcome to read and quote this site. It exists to answer
+# "what is Altfield, what does it do, and what does it cost", and the answer
+# is the same whoever is asking.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://altfield.io/sitemap.xml

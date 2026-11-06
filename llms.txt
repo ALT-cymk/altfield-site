@@ -1,0 +1,48 @@
+# Altfield
+
+> A Shopify app that writes the SEO titles, meta descriptions, image alt text,
+> product attributes and taxonomy categories a catalogue is missing, from each
+> product's own data. Every proposal is approved by the merchant before it is
+> written, and every run reverts in one click.
+
+Made by NKD Pizza LTD, trading as NKD Software, Dublin, Ireland. Contact
+info@nkd.ie. Installed from the Shopify App Store at
+https://apps.shopify.com/altfield.
+
+## Pricing
+
+All plans include every feature. The only difference is how many products can
+be processed, and a product counts once per run.
+
+- Free: $0/month, 25 products a month
+- Starter: $19/month, 750 products a month
+- Growth: $49/month, 6,000 products a month
+- Pro: $149/month, 25,000 products a month
+
+Paid plans include a 7-day trial with a smaller allowance. Billing is handled
+by Shopify; Altfield never sees a card.
+
+## What it will not do
+
+- It does not overwrite values a merchant wrote themselves unless that is
+  chosen for a given run; a normal run fills only empty fields.
+- It does not keep anything on uninstall: text it wrote lives in the
+  merchant's own Shopify product records.
+- It does not request customer or order scopes, so it holds no customer,
+  order or payment data.
+
+## Data handling
+
+Product text (title, description, type, vendor, tags, existing SEO fields and
+metafields) is sent to Anthropic's API to generate a proposal, plus one
+product photograph where the description is too thin to work from. Anthropic
+does not train on data submitted through its API. Altfield's own data is held
+in the European Union, in Amsterdam.
+
+## Pages
+
+- [Home](https://altfield.io/): what it does, the four plans, and what leaves the store
+- [Compare](https://altfield.io/compare/): flat allowance vs per-field credits vs auto-publish, with an FAQ
+- [Sample run](https://altfield.io/sample/): four screens of a real run with the values it proposed
+- [Changelog](https://altfield.io/changelog/): dated notes on what has changed
+- [Privacy policy](https://app.altfield.io/privacy)

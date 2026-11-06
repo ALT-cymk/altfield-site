@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Altfield vs per-field credits and auto-publish Shopify SEO apps</title>
+<meta name="description" content="The three ways to fill missing Shopify product metadata — a flat product allowance, per-field credits, or automatic publishing — and what each one costs you, including where Altfield is the wrong choice.">
+<link rel="canonical" href="https://altfield.io/compare/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://altfield.io/compare/">
+<meta property="og:title" content="Altfield compared with the other ways of doing this">
+<meta property="og:description" content="Flat product allowance, per-field credits, or automatic publishing: what each model actually costs, and where Altfield loses.">
+<meta property="og:image" content="https://altfield.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://altfield.io/assets/og.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I even need an app for this?","acceptedAnswer":{"@type":"Answer","text":"If your catalogue is small enough to fix in an afternoon, no. The case for an app starts when the work is a thousand products wide and comes back every time you add stock."}},{"@type":"Question","name":"Can I not just use ChatGPT or Claude with a template?","acceptedAnswer":{"@type":"Answer","text":"You can, and the writing will be fine. The work is everything around it: exporting the catalogue, keeping the rows lined up, pasting answers back, and having no record of the old values. Altfield generates inside your Shopify admin, writes through the API, and keeps the previous value of every field."}},{"@type":"Question","name":"Will it overwrite the product copy I wrote myself?","acceptedAnswer":{"@type":"Answer","text":"Not unless you ask it to. A normal run only fills fields that are empty. Replacing existing values is a separate option you turn on for that run, and nothing is written until you tick it."}},{"@type":"Question","name":"What happens to the text if I cancel?","acceptedAnswer":{"@type":"Answer","text":"It stays. Everything Altfield wrote is in your own Shopify product records, so downgrading, cancelling or uninstalling takes nothing away."}},{"@type":"Question","name":"How does a product count against my allowance?","acceptedAnswer":{"@type":"Answer","text":"Once per run, however many fields that run writes for it. Running it again next month counts again."}},{"@type":"Question","name":"Are there fields it will not write on its own?","acceptedAnswer":{"@type":"Answer","text":"Product names and descriptions are off unless you switch them on, and autopilot never writes them at all."}},{"@type":"Question","name":"Where is my data processed?","acceptedAnswer":{"@type":"Answer","text":"Product text goes to Anthropic's API to generate a proposal. No customer, order or payment data is sent, because the app never asks for access to any. Altfield's own data is held in the European Union, in Amsterdam."}}]}]}</script>
+<style>
+/* Altfield's own ink-and-amber identity, carried from the app icon and the
+   App Store images so the whole thing reads as one product. Inlined into
+   every page at build time: four small pages are cheaper to ship whole than
+   to make each one wait on a stylesheet. */
+:root {
+  --ink: #1b1733;
+  --ink-deep: #15121f;
+  --paper: #faf8f4;
+  --panel: #ffffff;
+  --rule: #e2dcd0;
+  --muted: #5d5673;
+  --amber: #c98a05;
+  --amber-bright: #ffc53d;
+  --on-dark: #ece8f5;
+  --on-dark-muted: #a9a2c6;
+  --good: #2c6a4a;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #ece8f5; --ink-deep: #0f0d18; --paper: #15131f; --panel: #1d1a2b;
+    --rule: #322c46; --muted: #a9a2c6; --amber: #f2bd52; --good: #79c49c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #ece8f5; --ink-deep: #0f0d18; --paper: #15131f; --panel: #1d1a2b;
+  --rule: #322c46; --muted: #a9a2c6; --amber: #f2bd52; --good: #79c49c;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.6; margin: 0; }
+.band { width: 100%; }
+.wrap {
+  max-width: 62rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3, .btn, .eyebrow, .plan-name, .price, .badge, nav a, th { font-family: var(--display); text-wrap: balance; }
+a { color: inherit; }
+
+/* Header and navigation */
+.hero { background: var(--ink-deep); color: var(--on-dark); }
+.hero .wrap { padding-block: clamp(2rem, 5vw, 2.75rem) clamp(3.5rem, 9vw, 6.5rem); }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; justify-content: space-between; margin-bottom: clamp(2rem, 6vw, 3.25rem); }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand-mark { width: 34px; height: 34px; border-radius: 8px; background: #221c4a; display: grid; place-items: center; flex: none; }
+.brand-mark span { display: block; width: 18px; height: 3px; border-radius: 2px; background: #fff; box-shadow: 0 6px 0 var(--amber-bright); }
+.brand-name { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.5rem; }
+nav a { font-size: .95rem; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
+nav a:hover { color: var(--on-dark); text-decoration: underline; text-underline-offset: 4px; }
+nav a.nav-cta { color: var(--amber-bright); }
+
+h1 { font-size: clamp(2.3rem, 6.5vw, 4rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 1.1rem; max-width: 20ch; }
+.lede { font-size: clamp(1.05rem, 2.3vw, 1.3rem); color: var(--on-dark-muted); max-width: 44ch; margin: 0 0 2rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: center; }
+.btn {
+  display: inline-block; background: var(--amber-bright); color: #1b1733;
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  padding: .85rem 1.5rem; border-radius: 8px;
+}
+.btn:hover { background: #ffd469; }
+.btn-ghost { background: transparent; color: var(--on-dark); border: 1px solid rgba(255,255,255,.35); }
+.btn-ghost:hover { background: rgba(255,255,255,.08); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--amber-bright); outline-offset: 3px; }
+.cta-note { font-size: .92rem; color: var(--on-dark-muted); }
+.proof-strip { margin-top: 1.5rem; font-size: .92rem; color: var(--on-dark-muted); }
+
+/* Shared section rhythm */
+section .wrap { padding-block: clamp(3rem, 7vw, 4.75rem); }
+.eyebrow { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: .6rem; }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.3rem); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 .7rem; max-width: 24ch; }
+p { margin: 0 0 1rem; max-width: 40rem; }
+.lead { font-size: 1.1rem; color: var(--muted); }
+
+/* Problem */
+.problem { border-bottom: 1px solid var(--rule); }
+.pull { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.35; letter-spacing: -0.01em; max-width: 26ch; margin: 0 0 1.75rem; }
+.problem p { color: var(--muted); }
+
+/* Feature rows */
+.rows { display: grid; gap: clamp(2.5rem, 6vw, 4rem); }
+.row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; align-items: center; }
+@media (min-width: 60rem) { .row { grid-template-columns: 0.85fr 1.15fr; gap: 3rem; } .row.flip .shot { order: -1; } }
+.row h3 { font-size: 1.35rem; font-weight: 700; margin: 0 0 .5rem; letter-spacing: -0.01em; }
+.row p { margin: 0; color: var(--muted); }
+.shot { min-width: 0; margin: 0; }
+.shot img { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; border: 1px solid var(--rule); background: var(--panel); }
+.shot figcaption { font-size: .88rem; color: var(--muted); margin-top: .55rem; }
+
+/* Promises */
+.promises { background: var(--panel); border-block: 1px solid var(--rule); }
+.promise-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin-top: 1.5rem; }
+.promise { min-width: 0; }
+.promise h3 { font-family: var(--display); font-size: 1.02rem; font-weight: 700; margin: 0 0 .35rem; }
+.promise p { font-size: .96rem; color: var(--muted); margin: 0; }
+.tick { color: var(--good); font-weight: 700; }
+
+/* Founder */
+.founder { border-bottom: 1px solid var(--rule); }
+.founder p { color: var(--muted); }
+.founder .sig { font-family: var(--display); font-weight: 700; color: var(--ink); }
+
+/* Pricing */
+.plans { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-top: 1.75rem; align-items: start; }
+.plan { border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; background: var(--panel); min-width: 0; position: relative; }
+.plan.featured { border: 2px solid var(--amber); padding: 1.15rem; }
+.badge { position: absolute; top: -.72rem; left: 1rem; background: var(--amber); color: #1b1733; font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: .2rem .5rem; border-radius: 4px; }
+.plan-name { font-weight: 700; font-size: .95rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); }
+.price { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; display: block; margin: .25rem 0 .1rem; font-variant-numeric: tabular-nums; }
+.per { font-size: .9rem; color: var(--muted); }
+.plan-for { display: block; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.cap { margin-top: .7rem; padding-top: .7rem; border-top: 1px solid var(--rule); font-size: .95rem; }
+.anchor-line { margin-top: 1.5rem; font-size: 1.02rem; }
+.pricing-note { margin-top: .9rem; font-size: .96rem; color: var(--muted); }
+.included { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .4rem .5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); font-size: .96rem; color: var(--muted); max-width: 48rem; }
+.included li::before { content: "\2713"; color: var(--good); font-weight: 700; margin-right: .5rem; }
+
+/* Data */
+.data { border-top: 1px solid var(--rule); }
+.data ul, .plain ul { margin: .5rem 0 1rem; padding-left: 1.15rem; max-width: 40rem; color: var(--muted); }
+.data li, .plain li { margin-bottom: .4rem; }
+
+/* Tables (comparison page) */
+.table-scroll { overflow-x: auto; margin-top: 1.5rem; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .97rem; }
+th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+tbody th { text-transform: none; letter-spacing: 0; font-size: .97rem; color: var(--ink); font-weight: 700; width: 30%; }
+td { color: var(--muted); }
+
+/* FAQ and changelog */
+.faq { border-top: 1px solid var(--rule); }
+.faq h3 { font-family: var(--display); font-size: 1.08rem; margin: 1.5rem 0 .4rem; }
+.faq p { color: var(--muted); }
+.entry { padding-block: 1.4rem; border-bottom: 1px solid var(--rule); }
+.entry:last-child { border-bottom: 0; }
+.entry time { font-family: var(--display); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); }
+.entry h3 { font-size: 1.1rem; margin: .3rem 0 .4rem; }
+.entry p { color: var(--muted); margin: 0; }
+
+/* Close */
+.close { background: var(--ink-deep); color: var(--on-dark); text-align: center; }
+.close .wrap { padding-block: clamp(3rem, 8vw, 5rem); }
+.close h2 { margin: 0 auto .8rem; color: var(--on-dark); }
+.close p { color: var(--on-dark-muted); margin: 0 auto 1.8rem; max-width: 34rem; }
+.close .cta-row { justify-content: center; }
+
+footer { background: var(--ink-deep); color: var(--on-dark-muted); border-top: 1px solid rgba(255,255,255,.08); font-size: .9rem; }
+footer .wrap { padding-block: 2rem; display: flex; flex-wrap: wrap; gap: .6rem 2rem; justify-content: space-between; }
+footer a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
+footer nav { gap: .4rem 1.25rem; }
+.legal { max-width: 34rem; }
+</style>
+</head>
+<body><header class="band hero">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-name">Altfield</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="/#pricing">Pricing</a>
+        <a href="/compare/">Compare</a>
+        <a class="nav-cta" href="https://apps.shopify.com/altfield">Install</a>
+      </nav>
+    </div>
+    <h1>Altfield compared with the other ways of doing this</h1>
+    <p class="lede">There are three common ways to fill in missing Shopify product metadata. Here is what each one actually costs you, including the ways Altfield is the wrong choice.</p>
+  </div>
+</header>
+
+<section class="band plain">
+  <div class="wrap">
+    <span class="eyebrow">The three options</span>
+    <h2>Flat allowance, per-field credits, or automatic publishing</h2>
+    <p class="lead">Most catalogue SEO apps fall into one of three models. They differ less in what they write than in what they charge for and what they do without asking you.</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Altfield</th>
+            <th scope="col">Per-field credit apps</th>
+            <th scope="col">Auto-publish apps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">What you pay for</th>
+            <td>Products, once per run. Five fields on one product is one product.</td>
+            <td>Each generated field. A five-field pass over 2,000 products is 10,000 credits, and a description often counts double.</td>
+            <td>Usually a flat monthly fee, sometimes per product.</td>
+          </tr>
+          <tr>
+            <th scope="row">Before anything is written</th>
+            <td>You see every proposed value beside its product and tick the ones you want.</td>
+            <td>Varies. Review is usually available, and usually optional.</td>
+            <td>Nothing. The point of the category is that it writes without you.</td>
+          </tr>
+          <tr>
+            <th scope="row">Undoing it</th>
+            <td>Every write records the value it replaced. One click puts a whole run back, makes no AI calls, and works on the free plan.</td>
+            <td>Often a log and a restore, sometimes charged as a second generation.</td>
+            <td>Frequently nothing to undo to — the previous value was not kept.</td>
+          </tr>
+          <tr>
+            <th scope="row">Your own copy</th>
+            <td>Only empty fields are filled. Replacing something you wrote is a separate choice you make on each run.</td>
+            <td>Depends on the app.</td>
+            <td>This is where the horror stories come from.</td>
+          </tr>
+          <tr>
+            <th scope="row">Working out the bill</th>
+            <td>One number: products a month.</td>
+            <td>A credit worksheet, because fields cost different amounts.</td>
+            <td>One number, but you are paying for writes you did not see.</td>
+          </tr>
+          <tr>
+            <th scope="row">Where Altfield loses</th>
+            <td>If you want a tool that simply does it all without you looking, Altfield is the wrong app — the approval step is the product.</td>
+            <td>If you only ever touch alt text on a handful of products, credits are cheaper than any subscription.</td>
+            <td>If your catalogue turns over daily and nobody has time to approve anything, automatic publishing is the honest answer.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-note">Altfield is $0 for 25 products a month, then $19, $49 or $149 for 750, 6,000 or 25,000. Every plan has every feature. <a href="/#pricing">See the full pricing</a>.</p>
+  </div>
+</section>
+
+<section class="band faq">
+  <div class="wrap">
+    <span class="eyebrow">Questions</span>
+    <h2>The ones merchants actually ask first</h2>
+
+    <h3>Do I even need an app for this?</h3>
+    <p>If your catalogue is small enough to fix in an afternoon, no — open each product and type the fields in. The case for an app starts when the work is a thousand products wide and keeps coming back every time you add stock.</p>
+
+    <h3>Can I not just use ChatGPT or Claude with a template?</h3>
+    <p>You can, and the writing will be fine. The work is everything around it: exporting the catalogue, keeping the rows lined up, pasting the answers back, and having no record of what the old values were. Altfield does the same generation inside your Shopify admin, writes through the API so nothing lands in the wrong row, and keeps the previous value of every field so you can put it all back.</p>
+
+    <h3>Will it overwrite the product copy I wrote myself?</h3>
+    <p>Not unless you ask it to. A normal run only fills fields that are empty. Replacing existing values is a separate option you turn on for that run, and even then nothing is written until you tick it.</p>
+
+    <h3>What happens to the text if I cancel?</h3>
+    <p>It stays. Everything Altfield wrote is written into your own Shopify product records, so downgrading, cancelling or uninstalling takes nothing away.</p>
+
+    <h3>How does a product count against my allowance?</h3>
+    <p>Once per run, no matter how many fields that run writes for it. Running a product again next month counts again.</p>
+
+    <h3>Are there fields it will not write on its own?</h3>
+    <p>Product names and descriptions are off unless you switch them on, and autopilot will never write them at all — those are what a shopper reads, so a person looks at them first.</p>
+
+    <h3>Where is my data processed?</h3>
+    <p>Product text goes to Anthropic's API to generate a proposal; no customer, order or payment data is sent, because the app never asks for access to any. Altfield's own data is held in the European Union, in Amsterdam. <a href="https://app.altfield.io/privacy">Full privacy policy</a>.</p>
+  </div>
+</section>
+
+<section class="band close">
+  <div class="wrap">
+    <h2>Look at what it proposes first</h2>
+    <p>Install it, run it on 25 products for nothing, and decide from the output rather than from this page.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://apps.shopify.com/altfield">Install on the Shopify App Store</a>
+      <a class="btn btn-ghost" href="/sample/">See a sample run</a>
+    </div>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <span class="legal">Altfield is made by NKD&nbsp;Pizza&nbsp;LTD, trading as NKD&nbsp;Software, Dublin, Ireland.</span>
+    <nav aria-label="Footer">
+      <a href="/compare/">Compare</a>
+      <a href="/sample/">Sample run</a>
+      <a href="/changelog/">Changelog</a>
+      <a href="https://app.altfield.io/privacy">Privacy</a>
+      <a href="mailto:info@nkd.ie">info@nkd.ie</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

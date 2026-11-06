@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A sample Altfield run — see the output before you install</title>
+<meta name="description" content="Four screens from a real Altfield run on a development store, with the SEO title and Shopify category it actually proposed, and the revert that undoes them.">
+<link rel="canonical" href="https://altfield.io/sample/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://altfield.io/sample/">
+<meta property="og:title" content="A sample run, before you install anything">
+<meta property="og:description" content="The gap count, the field picker, a real proposed SEO title and category, and the one-click revert.">
+<meta property="og:image" content="https://altfield.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://altfield.io/assets/og.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Altfield's own ink-and-amber identity, carried from the app icon and the
+   App Store images so the whole thing reads as one product. Inlined into
+   every page at build time: four small pages are cheaper to ship whole than
+   to make each one wait on a stylesheet. */
+:root {
+  --ink: #1b1733;
+  --ink-deep: #15121f;
+  --paper: #faf8f4;
+  --panel: #ffffff;
+  --rule: #e2dcd0;
+  --muted: #5d5673;
+  --amber: #c98a05;
+  --amber-bright: #ffc53d;
+  --on-dark: #ece8f5;
+  --on-dark-muted: #a9a2c6;
+  --good: #2c6a4a;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #ece8f5; --ink-deep: #0f0d18; --paper: #15131f; --panel: #1d1a2b;
+    --rule: #322c46; --muted: #a9a2c6; --amber: #f2bd52; --good: #79c49c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #ece8f5; --ink-deep: #0f0d18; --paper: #15131f; --panel: #1d1a2b;
+  --rule: #322c46; --muted: #a9a2c6; --amber: #f2bd52; --good: #79c49c;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.6; margin: 0; }
+.band { width: 100%; }
+.wrap {
+  max-width: 62rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3, .btn, .eyebrow, .plan-name, .price, .badge, nav a, th { font-family: var(--display); text-wrap: balance; }
+a { color: inherit; }
+
+/* Header and navigation */
+.hero { background: var(--ink-deep); color: var(--on-dark); }
+.hero .wrap { padding-block: clamp(2rem, 5vw, 2.75rem) clamp(3.5rem, 9vw, 6.5rem); }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; justify-content: space-between; margin-bottom: clamp(2rem, 6vw, 3.25rem); }
+.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand-mark { width: 34px; height: 34px; border-radius: 8px; background: #221c4a; display: grid; place-items: center; flex: none; }
+.brand-mark span { display: block; width: 18px; height: 3px; border-radius: 2px; background: #fff; box-shadow: 0 6px 0 var(--amber-bright); }
+.brand-name { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.5rem; }
+nav a { font-size: .95rem; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
+nav a:hover { color: var(--on-dark); text-decoration: underline; text-underline-offset: 4px; }
+nav a.nav-cta { color: var(--amber-bright); }
+
+h1 { font-size: clamp(2.3rem, 6.5vw, 4rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 1.1rem; max-width: 20ch; }
+.lede { font-size: clamp(1.05rem, 2.3vw, 1.3rem); color: var(--on-dark-muted); max-width: 44ch; margin: 0 0 2rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: center; }
+.btn {
+  display: inline-block; background: var(--amber-bright); color: #1b1733;
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  padding: .85rem 1.5rem; border-radius: 8px;
+}
+.btn:hover { background: #ffd469; }
+.btn-ghost { background: transparent; color: var(--on-dark); border: 1px solid rgba(255,255,255,.35); }
+.btn-ghost:hover { background: rgba(255,255,255,.08); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--amber-bright); outline-offset: 3px; }
+.cta-note { font-size: .92rem; color: var(--on-dark-muted); }
+.proof-strip { margin-top: 1.5rem; font-size: .92rem; color: var(--on-dark-muted); }
+
+/* Shared section rhythm */
+section .wrap { padding-block: clamp(3rem, 7vw, 4.75rem); }
+.eyebrow { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: .6rem; }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.3rem); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 .7rem; max-width: 24ch; }
+p { margin: 0 0 1rem; max-width: 40rem; }
+.lead { font-size: 1.1rem; color: var(--muted); }
+
+/* Problem */
+.problem { border-bottom: 1px solid var(--rule); }
+.pull { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.35; letter-spacing: -0.01em; max-width: 26ch; margin: 0 0 1.75rem; }
+.problem p { color: var(--muted); }
+
+/* Feature rows */
+.rows { display: grid; gap: clamp(2.5rem, 6vw, 4rem); }
+.row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; align-items: center; }
+@media (min-width: 60rem) { .row { grid-template-columns: 0.85fr 1.15fr; gap: 3rem; } .row.flip .shot { order: -1; } }
+.row h3 { font-size: 1.35rem; font-weight: 700; margin: 0 0 .5rem; letter-spacing: -0.01em; }
+.row p { margin: 0; color: var(--muted); }
+.shot { min-width: 0; margin: 0; }
+.shot img { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; border: 1px solid var(--rule); background: var(--panel); }
+.shot figcaption { font-size: .88rem; color: var(--muted); margin-top: .55rem; }
+
+/* Promises */
+.promises { background: var(--panel); border-block: 1px solid var(--rule); }
+.promise-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin-top: 1.5rem; }
+.promise { min-width: 0; }
+.promise h3 { font-family: var(--display); font-size: 1.02rem; font-weight: 700; margin: 0 0 .35rem; }
+.promise p { font-size: .96rem; color: var(--muted); margin: 0; }
+.tick { color: var(--good); font-weight: 700; }
+
+/* Founder */
+.founder { border-bottom: 1px solid var(--rule); }
+.founder p { color: var(--muted); }
+.founder .sig { font-family: var(--display); font-weight: 700; color: var(--ink); }
+
+/* Pricing */
+.plans { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-top: 1.75rem; align-items: start; }
+.plan { border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; background: var(--panel); min-width: 0; position: relative; }
+.plan.featured { border: 2px solid var(--amber); padding: 1.15rem; }
+.badge { position: absolute; top: -.72rem; left: 1rem; background: var(--amber); color: #1b1733; font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: .2rem .5rem; border-radius: 4px; }
+.plan-name { font-weight: 700; font-size: .95rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); }
+.price { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; display: block; margin: .25rem 0 .1rem; font-variant-numeric: tabular-nums; }
+.per { font-size: .9rem; color: var(--muted); }
+.plan-for { display: block; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.cap { margin-top: .7rem; padding-top: .7rem; border-top: 1px solid var(--rule); font-size: .95rem; }
+.anchor-line { margin-top: 1.5rem; font-size: 1.02rem; }
+.pricing-note { margin-top: .9rem; font-size: .96rem; color: var(--muted); }
+.included { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .4rem .5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); font-size: .96rem; color: var(--muted); max-width: 48rem; }
+.included li::before { content: "\2713"; color: var(--good); font-weight: 700; margin-right: .5rem; }
+
+/* Data */
+.data { border-top: 1px solid var(--rule); }
+.data ul, .plain ul { margin: .5rem 0 1rem; padding-left: 1.15rem; max-width: 40rem; color: var(--muted); }
+.data li, .plain li { margin-bottom: .4rem; }
+
+/* Tables (comparison page) */
+.table-scroll { overflow-x: auto; margin-top: 1.5rem; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .97rem; }
+th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+tbody th { text-transform: none; letter-spacing: 0; font-size: .97rem; color: var(--ink); font-weight: 700; width: 30%; }
+td { color: var(--muted); }
+
+/* FAQ and changelog */
+.faq { border-top: 1px solid var(--rule); }
+.faq h3 { font-family: var(--display); font-size: 1.08rem; margin: 1.5rem 0 .4rem; }
+.faq p { color: var(--muted); }
+.entry { padding-block: 1.4rem; border-bottom: 1px solid var(--rule); }
+.entry:last-child { border-bottom: 0; }
+.entry time { font-family: var(--display); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); }
+.entry h3 { font-size: 1.1rem; margin: .3rem 0 .4rem; }
+.entry p { color: var(--muted); margin: 0; }
+
+/* Close */
+.close { background: var(--ink-deep); color: var(--on-dark); text-align: center; }
+.close .wrap { padding-block: clamp(3rem, 8vw, 5rem); }
+.close h2 { margin: 0 auto .8rem; color: var(--on-dark); }
+.close p { color: var(--on-dark-muted); margin: 0 auto 1.8rem; max-width: 34rem; }
+.close .cta-row { justify-content: center; }
+
+footer { background: var(--ink-deep); color: var(--on-dark-muted); border-top: 1px solid rgba(255,255,255,.08); font-size: .9rem; }
+footer .wrap { padding-block: 2rem; display: flex; flex-wrap: wrap; gap: .6rem 2rem; justify-content: space-between; }
+footer a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
+footer nav { gap: .4rem 1.25rem; }
+.legal { max-width: 34rem; }
+</style>
+</head>
+<body><header class="band hero">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-name">Altfield</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="/#pricing">Pricing</a>
+        <a href="/compare/">Compare</a>
+        <a class="nav-cta" href="https://apps.shopify.com/altfield">Install</a>
+      </nav>
+    </div>
+    <h1>A sample run, before you install anything</h1>
+    <p class="lede">Four screens from a real run on a development store, in the order you meet them, with the values Altfield actually proposed.</p>
+  </div>
+</header>
+
+<section class="band plain">
+  <div class="wrap rows">
+
+    <div class="row">
+      <div>
+        <h3>1. It counts the gaps first</h3>
+        <p>Altfield reads the catalogue and tells you what is missing before it writes anything or charges anything. Drafts, archived products and gift cards are left out: they have no storefront page for a search engine to index.</p>
+      </div>
+      <figure class="shot">
+        <img src="/assets/00-header.webp" srcset="/assets/00-header.webp 760w, /assets/00-header@2x.webp 1260w" sizes="(min-width: 60rem) 54vw, calc(100vw - 32px)" width="760" height="156" loading="lazy" decoding="async" alt="Catalogue summary showing 2 products missing an SEO title, 2 missing a meta description, 0 missing alt text and 14 needing the image read">
+        <figcaption>On this 14-product store: 2 products with no SEO title, 2 with no meta description, none missing alt text, and 14 whose descriptions are too thin to write from without reading the photograph.</figcaption>
+      </figure>
+    </div>
+
+    <div class="row flip">
+      <div>
+        <h3>2. You pick the fields</h3>
+        <p>Each field is generated and applied on its own, and unticked fields are never sent to the model — so a narrower run is a cheaper one. Product name is off here, as it is by default.</p>
+      </div>
+      <figure class="shot">
+        <img src="/assets/02-fields.webp" srcset="/assets/02-fields.webp 760w, /assets/02-fields@2x.webp 1444w" sizes="(min-width: 60rem) 54vw, calc(100vw - 32px)" width="760" height="188" loading="lazy" decoding="async" alt="Field selection with SEO title, meta description, alt text, attributes and category ticked, and product name unticked">
+        <figcaption>SEO title, meta description, image alt text, product attributes and product category on. Product name off.</figcaption>
+      </figure>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3>3. You read what it proposes</h3>
+        <p>One row per product, each proposal beside the product it belongs to. Where the model is not confident, the row is labelled and left unticked, so the fields it is least sure about are the ones you cannot apply by accident.</p>
+      </div>
+      <figure class="shot">
+        <img src="/assets/01-approve.webp" srcset="/assets/01-approve.webp 760w, /assets/01-approve@2x.webp 1444w" sizes="(min-width: 60rem) 54vw, calc(100vw - 32px)" width="760" height="183" loading="lazy" decoding="async" alt="Review row for The Minimal Snowboard, proposing an SEO title and a product category, marked low confidence">
+        <figcaption>One real row from this run.</figcaption>
+      </figure>
+    </div>
+
+    <div class="table-scroll">
+      <table>
+        <caption class="cta-note" style="text-align:left;padding-bottom:.6rem">What that row says, in full</caption>
+        <tbody>
+          <tr><th scope="row">Product</th><td>The Minimal Snowboard</td></tr>
+          <tr><th scope="row">Confidence</th><td>Low — flagged, and not pre-selected</td></tr>
+          <tr><th scope="row">SEO title</th><td>Minimal Snowboard</td></tr>
+          <tr><th scope="row">Product category</th><td>Sporting Goods &gt; Outdoor Recreation &gt; Winter Sports &gt; Snowboards</td></tr>
+          <tr><th scope="row">Written when</th><td>Only after Apply selected is pressed, and only for the ticked rows</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="row flip">
+      <div>
+        <h3>4. Every run stays undoable</h3>
+        <p>The previous value of each field is recorded before it is replaced. Reverting restores those exact values, makes no AI calls, and is free on every plan — including after you stop paying.</p>
+      </div>
+      <figure class="shot">
+        <img src="/assets/03-revert.webp" srcset="/assets/03-revert.webp 760w, /assets/03-revert@2x.webp 1444w" sizes="(min-width: 60rem) 54vw, calc(100vw - 32px)" width="760" height="302" loading="lazy" decoding="async" alt="Run history listing each run with its date, status, fields changed and a Revert button">
+        <figcaption>The same store's history: each run with its date, how many fields it changed, and its own Revert button.</figcaption>
+      </figure>
+    </div>
+
+    <div class="row">
+      <div>
+        <h3>5. New products keep themselves filled in</h3>
+        <p>Autopilot fills a product as you add it, so the catalogue stops drifting back out of date. It is off by default, chosen one field at a time, it only ever fills fields that are empty, and everything it writes reverts like any other run.</p>
+      </div>
+      <figure class="shot">
+        <img src="/assets/04-autopilot.webp" srcset="/assets/04-autopilot.webp 760w, /assets/04-autopilot@2x.webp 1140w" sizes="(min-width: 60rem) 54vw, calc(100vw - 32px)" width="760" height="230" loading="lazy" decoding="async" alt="Autopilot settings with one checkbox per field, all unchecked by default">
+        <figcaption>One switch per field, all off until you turn them on.</figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<section class="band close">
+  <div class="wrap">
+    <h2>Run it on your own catalogue</h2>
+    <p>The first 25 products a month cost nothing and need no card, and the gap count above comes before any of it.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://apps.shopify.com/altfield">Install on the Shopify App Store</a>
+      <a class="btn btn-ghost" href="/compare/">Compare it with the alternatives</a>
+    </div>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <span class="legal">Altfield is made by NKD&nbsp;Pizza&nbsp;LTD, trading as NKD&nbsp;Software, Dublin, Ireland.</span>
+    <nav aria-label="Footer">
+      <a href="/compare/">Compare</a>
+      <a href="/sample/">Sample run</a>
+      <a href="/changelog/">Changelog</a>
+      <a href="https://app.altfield.io/privacy">Privacy</a>
+      <a href="mailto:info@nkd.ie">info@nkd.ie</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
