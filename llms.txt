@@ -42,7 +42,10 @@ in the European Union, in Amsterdam.
 ## Pages
 
 - [Home](https://altfield.io/): what it does, the four plans, and what leaves the store
+- [About](https://altfield.io/about/): why it was built, on a 50,000-SKU Shopify catalogue
 - [Compare](https://altfield.io/compare/): flat allowance vs per-field credits vs auto-publish, with an FAQ
+- [vs Lumi Catalog](https://altfield.io/compare/lumi-catalog/): same workflow, credits against a product allowance
+- [vs TinySEO](https://altfield.io/compare/tinyseo/): a broad SEO and speed toolkit against a narrow metadata tool
 - [Sample run](https://altfield.io/sample/): four screens of a real run with the values it proposed
 - [Changelog](https://altfield.io/changelog/): dated notes on what has changed
 - [Privacy policy](https://app.altfield.io/privacy)

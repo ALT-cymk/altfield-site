@@ -66,12 +66,14 @@ a { color: inherit; }
 .hero { background: var(--ink-deep); color: var(--on-dark); }
 .hero .wrap { padding-block: clamp(2rem, 5vw, 2.75rem) clamp(3.5rem, 9vw, 6.5rem); }
 .topbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; justify-content: space-between; margin-bottom: clamp(2rem, 6vw, 3.25rem); }
-.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: .6rem; min-height: 44px; text-decoration: none; }
 .brand-mark { width: 34px; height: 34px; border-radius: 8px; background: #221c4a; display: grid; place-items: center; flex: none; }
 .brand-mark span { display: block; width: 18px; height: 3px; border-radius: 2px; background: #fff; box-shadow: 0 6px 0 var(--amber-bright); }
 .brand-name { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; }
-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.5rem; }
-nav a { font-size: .95rem; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1.5rem; }
+/* 44px minimum on every nav target: these are the only things on the page a
+   thumb has to hit precisely, and at body size they were 24px tall. */
+nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .95rem; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
 nav a:hover { color: var(--on-dark); text-decoration: underline; text-underline-offset: 4px; }
 nav a.nav-cta { color: var(--amber-bright); }
 
@@ -88,7 +90,8 @@ h1 { font-size: clamp(2.3rem, 6.5vw, 4rem); font-weight: 800; line-height: 1.02;
 .btn-ghost:hover { background: rgba(255,255,255,.08); }
 .btn:focus-visible, a:focus-visible { outline: 3px solid var(--amber-bright); outline-offset: 3px; }
 .cta-note { font-size: .92rem; color: var(--on-dark-muted); }
-.proof-strip { margin-top: 1.5rem; font-size: .92rem; color: var(--on-dark-muted); }
+.proof-strip { margin-top: 1.6rem; font-size: .95rem; color: var(--on-dark-muted); max-width: 46ch; }
+.proof-strip a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Shared section rhythm */
 section .wrap { padding-block: clamp(3rem, 7vw, 4.75rem); }
@@ -120,8 +123,30 @@ p { margin: 0 0 1rem; max-width: 40rem; }
 .promise p { font-size: .96rem; color: var(--muted); margin: 0; }
 .tick { color: var(--good); font-weight: 700; }
 
+/* Merchant quotes.
+   These compete with four big screenshots further up the page, so they are set
+   at reading size rather than caption size — a quote shrunk into a grey column
+   reads as filler, which is the opposite of the job it is here to do. */
+.quotes { border-bottom: 1px solid var(--rule); }
+.quotes .promise-grid { gap: 1.25rem; }
+.quote {
+  margin: 0; min-width: 0; display: flex; flex-direction: column;
+  background: var(--panel); border: 1px solid var(--rule); border-top: 3px solid var(--amber);
+  border-radius: 10px; padding: 1.4rem 1.3rem 1.2rem;
+}
+.quote blockquote { margin: 0 0 1rem; flex: 1; }
+.quote blockquote p { margin: 0; font-size: 1.06rem; line-height: 1.55; color: var(--ink); max-width: none; }
+.quote blockquote p::before { content: "\201C"; }
+.quote blockquote p::after { content: "\201D"; }
+.quote figcaption { font-family: var(--display); font-size: .9rem; font-weight: 700; color: var(--ink); }
+.quote figcaption .role { display: block; font-weight: 600; color: var(--muted); font-size: .85rem; margin-top: .1rem; }
+
 /* Founder */
 .founder { border-bottom: 1px solid var(--rule); }
+.signature { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: start; }
+.founder-photo { border-radius: 50%; flex: none; }
+.signature .sig { margin-bottom: .5rem; font-size: 1.05rem; }
+.signature .role { display: block; font-family: var(--body); font-weight: 400; font-size: .95rem; color: var(--muted); }
 .founder p { color: var(--muted); }
 .founder .sig { font-family: var(--display); font-weight: 700; color: var(--ink); }
 
@@ -284,7 +309,10 @@ footer nav { gap: .4rem 1.25rem; }
   <div class="wrap">
     <span class="legal">Altfield is made by NKD&nbsp;Pizza&nbsp;LTD, trading as NKD&nbsp;Software, Dublin, Ireland.</span>
     <nav aria-label="Footer">
+      <a href="/about/">About</a>
       <a href="/compare/">Compare</a>
+      <a href="/compare/lumi-catalog/">vs Lumi</a>
+      <a href="/compare/tinyseo/">vs TinySEO</a>
       <a href="/sample/">Sample run</a>
       <a href="/changelog/">Changelog</a>
       <a href="https://app.altfield.io/privacy">Privacy</a>

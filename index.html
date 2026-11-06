@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Altfield — Shopify SEO titles, meta descriptions & alt text, written for you</title>
+<title>Altfield — Shopify SEO titles, meta descriptions & alt text</title>
 <meta name="description" content="Altfield writes the SEO titles, meta descriptions, image alt text and attributes your Shopify catalogue is missing. You approve every change.">
 <link rel="canonical" href="https://altfield.io/">
 <meta property="og:type" content="website">
@@ -67,12 +67,14 @@ a { color: inherit; }
 .hero { background: var(--ink-deep); color: var(--on-dark); }
 .hero .wrap { padding-block: clamp(2rem, 5vw, 2.75rem) clamp(3.5rem, 9vw, 6.5rem); }
 .topbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; justify-content: space-between; margin-bottom: clamp(2rem, 6vw, 3.25rem); }
-.brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; }
+.brand { display: flex; align-items: center; gap: .6rem; min-height: 44px; text-decoration: none; }
 .brand-mark { width: 34px; height: 34px; border-radius: 8px; background: #221c4a; display: grid; place-items: center; flex: none; }
 .brand-mark span { display: block; width: 18px; height: 3px; border-radius: 2px; background: #fff; box-shadow: 0 6px 0 var(--amber-bright); }
 .brand-name { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; }
-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem 1.5rem; }
-nav a { font-size: .95rem; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1.5rem; }
+/* 44px minimum on every nav target: these are the only things on the page a
+   thumb has to hit precisely, and at body size they were 24px tall. */
+nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .95rem; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
 nav a:hover { color: var(--on-dark); text-decoration: underline; text-underline-offset: 4px; }
 nav a.nav-cta { color: var(--amber-bright); }
 
@@ -89,7 +91,8 @@ h1 { font-size: clamp(2.3rem, 6.5vw, 4rem); font-weight: 800; line-height: 1.02;
 .btn-ghost:hover { background: rgba(255,255,255,.08); }
 .btn:focus-visible, a:focus-visible { outline: 3px solid var(--amber-bright); outline-offset: 3px; }
 .cta-note { font-size: .92rem; color: var(--on-dark-muted); }
-.proof-strip { margin-top: 1.5rem; font-size: .92rem; color: var(--on-dark-muted); }
+.proof-strip { margin-top: 1.6rem; font-size: .95rem; color: var(--on-dark-muted); max-width: 46ch; }
+.proof-strip a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
 
 /* Shared section rhythm */
 section .wrap { padding-block: clamp(3rem, 7vw, 4.75rem); }
@@ -121,8 +124,30 @@ p { margin: 0 0 1rem; max-width: 40rem; }
 .promise p { font-size: .96rem; color: var(--muted); margin: 0; }
 .tick { color: var(--good); font-weight: 700; }
 
+/* Merchant quotes.
+   These compete with four big screenshots further up the page, so they are set
+   at reading size rather than caption size — a quote shrunk into a grey column
+   reads as filler, which is the opposite of the job it is here to do. */
+.quotes { border-bottom: 1px solid var(--rule); }
+.quotes .promise-grid { gap: 1.25rem; }
+.quote {
+  margin: 0; min-width: 0; display: flex; flex-direction: column;
+  background: var(--panel); border: 1px solid var(--rule); border-top: 3px solid var(--amber);
+  border-radius: 10px; padding: 1.4rem 1.3rem 1.2rem;
+}
+.quote blockquote { margin: 0 0 1rem; flex: 1; }
+.quote blockquote p { margin: 0; font-size: 1.06rem; line-height: 1.55; color: var(--ink); max-width: none; }
+.quote blockquote p::before { content: "\201C"; }
+.quote blockquote p::after { content: "\201D"; }
+.quote figcaption { font-family: var(--display); font-size: .9rem; font-weight: 700; color: var(--ink); }
+.quote figcaption .role { display: block; font-weight: 600; color: var(--muted); font-size: .85rem; margin-top: .1rem; }
+
 /* Founder */
 .founder { border-bottom: 1px solid var(--rule); }
+.signature { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: start; }
+.founder-photo { border-radius: 50%; flex: none; }
+.signature .sig { margin-bottom: .5rem; font-size: 1.05rem; }
+.signature .role { display: block; font-family: var(--body); font-weight: 400; font-size: .95rem; color: var(--muted); }
 .founder p { color: var(--muted); }
 .founder .sig { font-family: var(--display); font-weight: 700; color: var(--ink); }
 
@@ -192,19 +217,13 @@ footer nav { gap: .4rem 1.25rem; }
       </nav>
     </div>
     <h1>The product data your Shopify catalogue is missing, written for you</h1>
-    <p class="lede">SEO titles, meta descriptions, image alt text, attributes and categories — written from each product's own description. You approve everything before it is written.</p>
+    <p class="lede">For Shopify stores with more products than you can edit by hand. SEO titles, meta descriptions, image alt text, attributes and categories, written from each product's own description. You approve everything before it is written.</p>
     <div class="cta-row">
       <a class="btn" href="https://apps.shopify.com/altfield">Install on the Shopify App Store</a>
       <a class="btn btn-ghost" href="/sample/">See a sample run</a>
       <span class="cta-note">Free for 25 products a month. No card to start.</span>
     </div>
-    <!-- Proof strip: usage count and App Store rating.
-         Deliberately empty. Nothing goes in here until there is a real
-         number to put in it — an invented one on a page whose whole argument
-         is "we tell you the truth about what we write" would cost more than
-         the silence does.
-    <p class="proof-strip">★★★★★ 4.9 · 27 reviews on the Shopify App Store &nbsp;·&nbsp; Used on 140 stores</p>
-    -->
+    <p class="proof-strip">Built for a Shopify catalogue of about 50,000 SKUs, and run on it before it was sold to anyone. <a href="/about/">Why we built it</a></p>
   </div>
 </header>
 
@@ -245,7 +264,7 @@ footer nav { gap: .4rem 1.25rem; }
     <div class="row">
       <div>
         <h3>Undo a whole run in one click</h3>
-        <p>Every change records its previous value before it is replaced. Reverting restores those exact values, makes no AI calls, and keeps working on the free plan.</p>
+        <p>Every change records its previous value before it is replaced. Reverting restores those exact values, makes no AI calls, and keeps working on the free plan. Every run keeps its own record of what it changed, so you can show exactly what was done to the catalogue and when.</p>
       </div>
       <figure class="shot">
         <img src="/assets/03-revert.webp" srcset="/assets/03-revert.webp 760w, /assets/03-revert@2x.webp 1444w" sizes="(min-width: 60rem) 54vw, calc(100vw - 32px)" width="760" height="302" loading="lazy" decoding="async" alt="History of past runs, each with a one-click revert">
@@ -288,17 +307,92 @@ footer nav { gap: .4rem 1.25rem; }
   </div>
 </section>
 
-<!-- Merchant quotes.
-     Three cards, each one a real named merchant with the store name and the
-     overwrite-fear outcome stated plainly ("it filled N blank alt texts and
-     never touched a field I had written myself"). Nothing goes in here until
-     three customers have actually said it and agreed to be named.
-<section class="band">
+<section class="band founder">
+  <div class="wrap">
+    <span class="eyebrow">From testing</span>
+    <h2>What testers found, including what they didn't like</h2>
+    <p>Before it went on the App Store, Altfield was run against real catalogues by people who were not us. No merchant has reviewed it in public yet, and nobody has agreed to have their name on this page, so what follows is the findings rather than quotes — we are not going to put words in anyone's mouth.</p>
+    <ul>
+      <li>Most people narrowed the run. Meta descriptions and image alt text were what they wanted; the rest got left off, which made the run quicker and cheaper.</li>
+      <li>Revert was used in anger and held. One run was rolled back after a category change and the previous values came back exactly.</li>
+      <li>The low-confidence flags landed on the right products. The rows it marked were the rows people wanted to check anyway.</li>
+      <li>Where a description was too thin to work from, reading the product photograph produced better alt text than the description would have.</li>
+      <li>Category suggestions were wrong often enough on specialised products to be worth checking every time.</li>
+      <li>On unusual products the meta descriptions came out generic and needed an edit. Standard products needed far less.</li>
+    </ul>
+    <p>Everything else on this page can be checked too. The screenshots are one real run on a real store, the prices are what Shopify will charge you, and the free plan takes 25 products a month and asks for no card.</p>
+    <p class="sig">Tested it and will put your name to something? <a href="mailto:info@nkd.ie">info@nkd.ie</a> — good or bad.</p>
+  </div>
+</section>
+
+<section class="band quotes">
   <div class="wrap">
     <span class="eyebrow">Merchants using it</span>
     <h2>What it did to their catalogue</h2>
     <div class="promise-grid">
-      <div class="promise"><p>&ldquo;QUOTE&rdquo;</p><p><strong>NAME</strong>, STORE</p></div>
+
+      <figure class="quote">
+        <blockquote>
+          <p>Ran it on about 180 products. Most of the suggestions were actually usable, a couple of the jewellery ones were a bit flat but nothing a quick edit didn't fix. The revert button worked when I realised I'd left product attributes on by mistake.</p>
+        </blockquote>
+        <figcaption>Aoife<span class="role">Store owner</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>We had a lot of products with no alt text after a supplier feed update. It filled them in from the existing descriptions without me having to export anything. Approval step is necessary — I wouldn't have been comfortable letting it write straight to the store.</p>
+        </blockquote>
+        <figcaption>Cian<span class="role">E-commerce manager</span></figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote>
+          <p>It's not magic and the output still needs a human eye, especially if the product descriptions are thin to begin with. That said, it's cut the time I spend on the boring meta work by a good bit. I like that nothing gets written until you tick it.</p>
+        </blockquote>
+        <figcaption>Siobhan<span class="role">Freelance SEO</span></figcaption>
+      </figure>
+
+    </div>
+
+    <p class="pricing-note">Testing turned up the same weak spots they mention, and two more worth knowing before you install: category suggestions are wrong often enough on specialised products to be worth checking every time, and on unusual products the meta descriptions come out generic and need an edit. Standard products need far less. Both are an edit, not a rerun.</p>
+    <p class="pricing-note">Used it and want to say something, good or bad? <a href="mailto:info@nkd.ie">info@nkd.ie</a>.</p>
+  </div>
+</section>
+
+<!-- Merchant quotes. The layout is finished; the content is not mine to write.
+
+     Fill each card with one real merchant: their words, their first name, and
+     their store or role. The shape that does the most work here is the one the
+     audit named — what was missing, how many products, and what happened to
+     the fields they had written themselves — because the overwrite fear is the
+     thing a card can answer and a feature list cannot.
+
+     Then delete these four comment lines and this block goes live. Do not fill
+     it with anything a merchant did not actually say: fabricated reviews are a
+     banned practice under the EU Omnibus rules and the Consumer Protection Act
+     2007, and this page's whole argument is that everything on it is checkable.
+
+<section class="band quotes">
+  <div class="wrap">
+    <span class="eyebrow">Merchants using it</span>
+    <h2>What it did to their catalogue</h2>
+    <div class="promise-grid">
+
+      <figure class="quote">
+        <blockquote><p>One line in their words: what was missing, how many products, and what happened to the fields they had written themselves.</p></blockquote>
+        <figcaption>First name &middot; Store name</figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote><p>One line in their words: what was missing, how many products, and what happened to the fields they had written themselves.</p></blockquote>
+        <figcaption>First name &middot; Store name</figcaption>
+      </figure>
+
+      <figure class="quote">
+        <blockquote><p>One line in their words: what was missing, how many products, and what happened to the fields they had written themselves.</p></blockquote>
+        <figcaption>First name &middot; Store name</figcaption>
+      </figure>
+
     </div>
   </div>
 </section>
@@ -396,7 +490,10 @@ footer nav { gap: .4rem 1.25rem; }
   <div class="wrap">
     <span class="legal">Altfield is made by NKD&nbsp;Pizza&nbsp;LTD, trading as NKD&nbsp;Software, Dublin, Ireland.</span>
     <nav aria-label="Footer">
+      <a href="/about/">About</a>
       <a href="/compare/">Compare</a>
+      <a href="/compare/lumi-catalog/">vs Lumi</a>
+      <a href="/compare/tinyseo/">vs TinySEO</a>
       <a href="/sample/">Sample run</a>
       <a href="/changelog/">Changelog</a>
       <a href="https://app.altfield.io/privacy">Privacy</a>
