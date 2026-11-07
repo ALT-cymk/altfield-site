@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Sj/+glS1LlmnA8ZBIIBBjAgFN7XcsFeaNa+F5YaFJ10=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-OAPmL7v7uJrSttzwr6uA5PracoW9D+XumoJwOlZifuY=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Altfield vs credit-based and auto-publish Shopify SEO apps</title>
 <meta name="description" content="The three ways to fill missing Shopify product metadata — a flat product allowance, per-field credits, or automatic publishing — and what each one costs you, including where Altfield is the wrong choice.">
@@ -174,6 +174,11 @@ p { margin: 0 0 1rem; max-width: 40rem; }
 .sitelinks li { font-size: .97rem; color: var(--muted); }
 .sitelinks a { font-weight: 600; }
 
+/* Two one-off tweaks that used to be style attributes. A hash-based CSP
+   blocks style attributes outright, so they live here instead. */
+.promise-grid.spaced { margin-top: 2.25rem; }
+caption.table-note { text-align: left; padding-bottom: .6rem; }
+
 /* Data */
 .data { border-top: 1px solid var(--rule); }
 .data ul, .plain ul { margin: .5rem 0 1rem; padding-left: 1.15rem; max-width: 40rem; color: var(--muted); }
@@ -286,7 +291,7 @@ footer nav { gap: .4rem 1.25rem; }
     </div>
     <p class="pricing-note">Altfield is $0 for 25 products a month, then $19, $49 or $149 for 750, 6,000 or 25,000. Every plan has every feature. <a href="/#pricing">See the full pricing</a>.</p>
 
-    <div class="promise-grid" style="margin-top:2.25rem">
+    <div class="promise-grid spaced">
       <div class="promise">
         <h3><a href="/compare/lumi-catalog/">Altfield vs Lumi Catalog</a></h3>
         <p>The same approval-gated workflow, metered in credits per field rather than products per run — and the things Lumi does that Altfield does not, including letting you see your gaps before you install.</p>

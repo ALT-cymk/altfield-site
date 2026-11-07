@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Sj/+glS1LlmnA8ZBIIBBjAgFN7XcsFeaNa+F5YaFJ10=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-OAPmL7v7uJrSttzwr6uA5PracoW9D+XumoJwOlZifuY=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>A sample Altfield run — see the output before you install</title>
 <meta name="description" content="Four screens from a real Altfield run on a development store, with the SEO title and Shopify category it actually proposed, and the revert that undoes them.">
@@ -174,6 +174,11 @@ p { margin: 0 0 1rem; max-width: 40rem; }
 .sitelinks li { font-size: .97rem; color: var(--muted); }
 .sitelinks a { font-weight: 600; }
 
+/* Two one-off tweaks that used to be style attributes. A hash-based CSP
+   blocks style attributes outright, so they live here instead. */
+.promise-grid.spaced { margin-top: 2.25rem; }
+caption.table-note { text-align: left; padding-bottom: .6rem; }
+
 /* Data */
 .data { border-top: 1px solid var(--rule); }
 .data ul, .plain ul { margin: .5rem 0 1rem; padding-left: 1.15rem; max-width: 40rem; color: var(--muted); }
@@ -267,7 +272,7 @@ footer nav { gap: .4rem 1.25rem; }
 
     <div class="table-scroll">
       <table>
-        <caption class="cta-note" style="text-align:left;padding-bottom:.6rem">What that row says, in full</caption>
+        <caption class="cta-note table-note">What that row says, in full</caption>
         <tbody>
           <tr><th scope="row">Product</th><td>The Minimal Snowboard</td></tr>
           <tr><th scope="row">Confidence</th><td>Low — flagged, and not pre-selected</td></tr>

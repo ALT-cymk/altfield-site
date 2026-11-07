@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Sj/+glS1LlmnA8ZBIIBBjAgFN7XcsFeaNa+F5YaFJ10=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-OAPmL7v7uJrSttzwr6uA5PracoW9D+XumoJwOlZifuY=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>About Altfield — built for a 50,000-SKU catalogue</title>
 <meta name="description" content="Altfield was built to fill the missing SEO fields on our own Shopify store of about 50,000 SKUs, and run on it before it was sold to anyone. Why approval, product-based pricing and free reverts are the way they are.">
@@ -173,6 +173,11 @@ p { margin: 0 0 1rem; max-width: 40rem; }
 .sitelinks { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .7rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); max-width: 52rem; }
 .sitelinks li { font-size: .97rem; color: var(--muted); }
 .sitelinks a { font-weight: 600; }
+
+/* Two one-off tweaks that used to be style attributes. A hash-based CSP
+   blocks style attributes outright, so they live here instead. */
+.promise-grid.spaced { margin-top: 2.25rem; }
+caption.table-note { text-align: left; padding-bottom: .6rem; }
 
 /* Data */
 .data { border-top: 1px solid var(--rule); }
