@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Sj/+glS1LlmnA8ZBIIBBjAgFN7XcsFeaNa+F5YaFJ10=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Altfield vs Lumi Catalog — Shopify catalogue cleanup</title>
 <meta name="description" content="Lumi Catalog and Altfield run the same approval-gated workflow. The difference is credits against a flat product allowance, plus the things Lumi does that Altfield does not. Figures read from Lumi's own pricing page.">
 <link rel="canonical" href="https://altfield.io/compare/lumi-catalog/">
@@ -17,6 +19,7 @@
 <meta name="twitter:image" content="https://altfield.io/assets/og.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://altfield.io/#organization","name":"NKD Software","legalName":"NKD Pizza LTD","url":"https://altfield.io","logo":"https://altfield.io/assets/og.png","email":"info@nkd.ie","address":{"@type":"PostalAddress","addressLocality":"Dublin","addressCountry":"IE"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"info@nkd.ie","url":"https://altfield.io/about/#contact","availableLanguage":"English"},"sameAs":["https://apps.shopify.com/altfield"]}]}</script>
 <style>
 /* Altfield's own ink-and-amber identity, carried from the app icon and the
    App Store images so the whole thing reads as one product. Inlined into
@@ -164,6 +167,12 @@ p { margin: 0 0 1rem; max-width: 40rem; }
 .pricing-note { margin-top: .9rem; font-size: .96rem; color: var(--muted); }
 .included { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .4rem .5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); font-size: .96rem; color: var(--muted); max-width: 48rem; }
 .included li::before { content: "\2713"; color: var(--good); font-weight: 700; margin-right: .5rem; }
+
+/* The site index on the 404 page: the same grid as .included, but these are
+   destinations rather than things you get, so no ticks. */
+.sitelinks { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .7rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); max-width: 52rem; }
+.sitelinks li { font-size: .97rem; color: var(--muted); }
+.sitelinks a { font-weight: 600; }
 
 /* Data */
 .data { border-top: 1px solid var(--rule); }

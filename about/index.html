@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Sj/+glS1LlmnA8ZBIIBBjAgFN7XcsFeaNa+F5YaFJ10=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>About Altfield — built for a 50,000-SKU catalogue</title>
 <meta name="description" content="Altfield was built to fill the missing SEO fields on our own Shopify store of about 50,000 SKUs, and run on it before it was sold to anyone. Why approval, product-based pricing and free reverts are the way they are.">
 <link rel="canonical" href="https://altfield.io/about/">
@@ -17,6 +19,7 @@
 <meta name="twitter:image" content="https://altfield.io/assets/og.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://altfield.io/#organization","name":"NKD Software","legalName":"NKD Pizza LTD","url":"https://altfield.io","logo":"https://altfield.io/assets/og.png","email":"info@nkd.ie","address":{"@type":"PostalAddress","addressLocality":"Dublin","addressCountry":"IE"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"info@nkd.ie","url":"https://altfield.io/about/#contact","availableLanguage":"English"},"sameAs":["https://apps.shopify.com/altfield"]}]}</script>
 <style>
 /* Altfield's own ink-and-amber identity, carried from the app icon and the
    App Store images so the whole thing reads as one product. Inlined into
@@ -165,6 +168,12 @@ p { margin: 0 0 1rem; max-width: 40rem; }
 .included { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .4rem .5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); font-size: .96rem; color: var(--muted); max-width: 48rem; }
 .included li::before { content: "\2713"; color: var(--good); font-weight: 700; margin-right: .5rem; }
 
+/* The site index on the 404 page: the same grid as .included, but these are
+   destinations rather than things you get, so no ticks. */
+.sitelinks { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .7rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); max-width: 52rem; }
+.sitelinks li { font-size: .97rem; color: var(--muted); }
+.sitelinks a { font-weight: 600; }
+
 /* Data */
 .data { border-top: 1px solid var(--rule); }
 .data ul, .plain ul { margin: .5rem 0 1rem; padding-left: 1.15rem; max-width: 40rem; color: var(--muted); }
@@ -249,6 +258,15 @@ footer nav { gap: .4rem 1.25rem; }
         <p>On every plan, including after you stop paying. An undo you have to pay for is not an undo.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="band" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Who you are writing to</span>
+    <h2>Altfield is made in Dublin, Ireland</h2>
+    <p>The company is NKD&nbsp;Pizza&nbsp;LTD, registered in Ireland and trading as NKD&nbsp;Software. The earliest entry in the <a href="/changelog/">changelog</a> is dated 2&nbsp;September&nbsp;2026, and it lists every change since, including the things that were broken.</p>
+    <p>There is no chat widget and no ticket queue. Mail goes to <a href="mailto:info@nkd.ie">info@nkd.ie</a> and is read by the people who wrote the app. If Altfield gets something wrong on your catalogue we would rather hear it from you than read it in a review.</p>
   </div>
 </section>
 

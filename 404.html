@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-Sj/+glS1LlmnA8ZBIIBBjAgFN7XcsFeaNa+F5YaFJ10=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex">
+<title>Page not found — Altfield</title>
+<meta name="description" content="There is nothing at this address. Every page on the Altfield site is listed here.">
+<link rel="canonical" href="https://altfield.io/404.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://altfield.io/404.html">
+<meta property="og:title" content="Page not found">
+<meta property="og:description" content="Nothing at this address. Every page on the site is listed instead.">
+<meta property="og:image" content="https://altfield.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://altfield.io/assets/og.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://altfield.io/#organization","name":"NKD Software","legalName":"NKD Pizza LTD","url":"https://altfield.io","logo":"https://altfield.io/assets/og.png","email":"info@nkd.ie","address":{"@type":"PostalAddress","addressLocality":"Dublin","addressCountry":"IE"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"info@nkd.ie","url":"https://altfield.io/about/#contact","availableLanguage":"English"},"sameAs":["https://apps.shopify.com/altfield"]}]}</script>
+<style>
+/* Altfield's own ink-and-amber identity, carried from the app icon and the
+   App Store images so the whole thing reads as one product. Inlined into
+   every page at build time: four small pages are cheaper to ship whole than
+   to make each one wait on a stylesheet. */
+:root {
+  --ink: #1b1733;
+  --ink-deep: #15121f;
+  --paper: #faf8f4;
+  --panel: #ffffff;
+  --rule: #e2dcd0;
+  --muted: #5d5673;
+  --amber: #c98a05;
+  --amber-bright: #ffc53d;
+  --on-dark: #ece8f5;
+  --on-dark-muted: #a9a2c6;
+  --good: #2c6a4a;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #ece8f5; --ink-deep: #0f0d18; --paper: #15131f; --panel: #1d1a2b;
+    --rule: #322c46; --muted: #a9a2c6; --amber: #f2bd52; --good: #79c49c;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ink: #ece8f5; --ink-deep: #0f0d18; --paper: #15131f; --panel: #1d1a2b;
+  --rule: #322c46; --muted: #a9a2c6; --amber: #f2bd52; --good: #79c49c;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); line-height: 1.6; margin: 0; }
+.band { width: 100%; }
+.wrap {
+  max-width: 62rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3, .btn, .eyebrow, .plan-name, .price, .badge, nav a, th { font-family: var(--display); text-wrap: balance; }
+a { color: inherit; }
+
+/* Header and navigation */
+.hero { background: var(--ink-deep); color: var(--on-dark); }
+.hero .wrap { padding-block: clamp(2rem, 5vw, 2.75rem) clamp(3.5rem, 9vw, 6.5rem); }
+.topbar { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; justify-content: space-between; margin-bottom: clamp(2rem, 6vw, 3.25rem); }
+.brand { display: flex; align-items: center; gap: .6rem; min-height: 44px; text-decoration: none; }
+.brand-mark { width: 34px; height: 34px; border-radius: 8px; background: #221c4a; display: grid; place-items: center; flex: none; }
+.brand-mark span { display: block; width: 18px; height: 3px; border-radius: 2px; background: #fff; box-shadow: 0 6px 0 var(--amber-bright); }
+.brand-name { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; font-size: 1.05rem; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem 1.5rem; }
+/* 44px minimum on every nav target: these are the only things on the page a
+   thumb has to hit precisely, and at body size they were 24px tall. */
+nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: .95rem; font-weight: 600; color: var(--on-dark-muted); text-decoration: none; }
+nav a:hover { color: var(--on-dark); text-decoration: underline; text-underline-offset: 4px; }
+nav a.nav-cta { color: var(--amber-bright); }
+
+h1 { font-size: clamp(2.3rem, 6.5vw, 4rem); font-weight: 800; line-height: 1.02; letter-spacing: -0.03em; margin: 0 0 1.1rem; max-width: 20ch; }
+.lede { font-size: clamp(1.05rem, 2.3vw, 1.3rem); color: var(--on-dark-muted); max-width: 44ch; margin: 0 0 2rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; align-items: center; }
+.btn {
+  display: inline-block; background: var(--amber-bright); color: #1b1733;
+  font-weight: 700; font-size: 1rem; text-decoration: none;
+  padding: .85rem 1.5rem; border-radius: 8px;
+}
+.btn:hover { background: #ffd469; }
+.btn-ghost { background: transparent; color: var(--on-dark); border: 1px solid rgba(255,255,255,.35); }
+.btn-ghost:hover { background: rgba(255,255,255,.08); }
+.btn:focus-visible, a:focus-visible { outline: 3px solid var(--amber-bright); outline-offset: 3px; }
+.cta-note { font-size: .92rem; color: var(--on-dark-muted); }
+.proof-strip { margin-top: 1.6rem; font-size: .95rem; color: var(--on-dark-muted); max-width: 46ch; }
+.proof-strip a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Shared section rhythm */
+section .wrap { padding-block: clamp(3rem, 7vw, 4.75rem); }
+.eyebrow { font-size: .74rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); display: block; margin-bottom: .6rem; }
+h2 { font-size: clamp(1.6rem, 3.6vw, 2.3rem); font-weight: 700; letter-spacing: -0.02em; margin: 0 0 .7rem; max-width: 24ch; }
+p { margin: 0 0 1rem; max-width: 40rem; }
+.lead { font-size: 1.1rem; color: var(--muted); }
+
+/* Problem */
+.problem { border-bottom: 1px solid var(--rule); }
+.pull { font-family: var(--display); font-weight: 600; font-size: clamp(1.25rem, 3vw, 1.7rem); line-height: 1.35; letter-spacing: -0.01em; max-width: 26ch; margin: 0 0 1.75rem; }
+.problem p { color: var(--muted); }
+
+/* Feature rows */
+.rows { display: grid; gap: clamp(2.5rem, 6vw, 4rem); }
+.row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; align-items: center; }
+@media (min-width: 60rem) { .row { grid-template-columns: 0.85fr 1.15fr; gap: 3rem; } .row.flip .shot { order: -1; } }
+.row h3 { font-size: 1.35rem; font-weight: 700; margin: 0 0 .5rem; letter-spacing: -0.01em; }
+.row p { margin: 0; color: var(--muted); }
+.shot { min-width: 0; margin: 0; }
+.shot img { display: block; width: 100%; height: auto; max-width: 100%; border-radius: 10px; border: 1px solid var(--rule); background: var(--panel); }
+.shot figcaption { font-size: .88rem; color: var(--muted); margin-top: .55rem; }
+
+/* Promises */
+.promises { background: var(--panel); border-block: 1px solid var(--rule); }
+.promise-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); margin-top: 1.5rem; }
+.promise { min-width: 0; }
+.promise h3 { font-family: var(--display); font-size: 1.02rem; font-weight: 700; margin: 0 0 .35rem; }
+.promise p { font-size: .96rem; color: var(--muted); margin: 0; }
+.tick { color: var(--good); font-weight: 700; }
+
+/* Merchant quotes.
+   These compete with four big screenshots further up the page, so they are set
+   at reading size rather than caption size — a quote shrunk into a grey column
+   reads as filler, which is the opposite of the job it is here to do. */
+.quotes { border-bottom: 1px solid var(--rule); }
+.quotes .promise-grid { gap: 1.25rem; }
+.quote {
+  margin: 0; min-width: 0; display: flex; flex-direction: column;
+  background: var(--panel); border: 1px solid var(--rule); border-top: 3px solid var(--amber);
+  border-radius: 10px; padding: 1.4rem 1.3rem 1.2rem;
+}
+.quote blockquote { margin: 0 0 1rem; flex: 1; }
+.quote blockquote p { margin: 0; font-size: 1.06rem; line-height: 1.55; color: var(--ink); max-width: none; }
+.quote blockquote p::before { content: "\201C"; }
+.quote blockquote p::after { content: "\201D"; }
+.quote figcaption { font-family: var(--display); font-size: .9rem; font-weight: 700; color: var(--ink); }
+.quote figcaption .role { display: block; font-weight: 600; color: var(--muted); font-size: .85rem; margin-top: .1rem; }
+
+/* Founder */
+.founder { border-bottom: 1px solid var(--rule); }
+.signature { display: flex; flex-wrap: wrap; gap: 1.25rem; align-items: start; }
+.founder-photo { border-radius: 50%; flex: none; }
+.signature .sig { margin-bottom: .5rem; font-size: 1.05rem; }
+.signature .role { display: block; font-family: var(--body); font-weight: 400; font-size: .95rem; color: var(--muted); }
+.founder p { color: var(--muted); }
+.founder .sig { font-family: var(--display); font-weight: 700; color: var(--ink); }
+
+/* Pricing */
+.plans { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-top: 1.75rem; align-items: start; }
+.plan { border: 1px solid var(--rule); border-radius: 10px; padding: 1.2rem; background: var(--panel); min-width: 0; position: relative; }
+.plan.featured { border: 2px solid var(--amber); padding: 1.15rem; }
+.badge { position: absolute; top: -.72rem; left: 1rem; background: var(--amber); color: #1b1733; font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: .2rem .5rem; border-radius: 4px; }
+.plan-name { font-weight: 700; font-size: .95rem; letter-spacing: .02em; text-transform: uppercase; color: var(--muted); }
+.price { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; display: block; margin: .25rem 0 .1rem; font-variant-numeric: tabular-nums; }
+.per { font-size: .9rem; color: var(--muted); }
+.plan-for { display: block; font-size: .9rem; color: var(--muted); margin-top: .5rem; }
+.cap { margin-top: .7rem; padding-top: .7rem; border-top: 1px solid var(--rule); font-size: .95rem; }
+.anchor-line { margin-top: 1.5rem; font-size: 1.02rem; }
+.pricing-note { margin-top: .9rem; font-size: .96rem; color: var(--muted); }
+.included { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .4rem .5rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); font-size: .96rem; color: var(--muted); max-width: 48rem; }
+.included li::before { content: "\2713"; color: var(--good); font-weight: 700; margin-right: .5rem; }
+
+/* The site index on the 404 page: the same grid as .included, but these are
+   destinations rather than things you get, so no ticks. */
+.sitelinks { margin: 1.5rem 0 0; padding: 0; list-style: none; display: grid; gap: .7rem 1.5rem; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); max-width: 52rem; }
+.sitelinks li { font-size: .97rem; color: var(--muted); }
+.sitelinks a { font-weight: 600; }
+
+/* Data */
+.data { border-top: 1px solid var(--rule); }
+.data ul, .plain ul { margin: .5rem 0 1rem; padding-left: 1.15rem; max-width: 40rem; color: var(--muted); }
+.data li, .plain li { margin-bottom: .4rem; }
+
+/* Tables (comparison page) */
+.table-scroll { overflow-x: auto; margin-top: 1.5rem; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .97rem; }
+th, td { text-align: left; padding: .7rem .9rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+tbody th { text-transform: none; letter-spacing: 0; font-size: .97rem; color: var(--ink); font-weight: 700; width: 30%; }
+td { color: var(--muted); }
+
+/* FAQ and changelog */
+.faq { border-top: 1px solid var(--rule); }
+.faq h3 { font-family: var(--display); font-size: 1.08rem; margin: 1.5rem 0 .4rem; }
+.faq p { color: var(--muted); }
+.entry { padding-block: 1.4rem; border-bottom: 1px solid var(--rule); }
+.entry:last-child { border-bottom: 0; }
+.entry time { font-family: var(--display); font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); }
+.entry h3 { font-size: 1.1rem; margin: .3rem 0 .4rem; }
+.entry p { color: var(--muted); margin: 0; }
+
+/* Close */
+.close { background: var(--ink-deep); color: var(--on-dark); text-align: center; }
+.close .wrap { padding-block: clamp(3rem, 8vw, 5rem); }
+.close h2 { margin: 0 auto .8rem; color: var(--on-dark); }
+.close p { color: var(--on-dark-muted); margin: 0 auto 1.8rem; max-width: 34rem; }
+.close .cta-row { justify-content: center; }
+
+footer { background: var(--ink-deep); color: var(--on-dark-muted); border-top: 1px solid rgba(255,255,255,.08); font-size: .9rem; }
+footer .wrap { padding-block: 2rem; display: flex; flex-wrap: wrap; gap: .6rem 2rem; justify-content: space-between; }
+footer a { color: var(--on-dark); text-decoration: underline; text-underline-offset: 3px; }
+footer nav { gap: .4rem 1.25rem; }
+.legal { max-width: 34rem; }
+</style>
+</head>
+<body><header class="band hero">
+  <div class="wrap">
+    <div class="topbar">
+      <a class="brand" href="/">
+        <span class="brand-mark" aria-hidden="true"><span></span></span>
+        <span class="brand-name">Altfield</span>
+      </a>
+      <nav aria-label="Main">
+        <a href="/#pricing">Pricing</a>
+        <a href="/compare/">Compare</a>
+        <a class="nav-cta" href="https://apps.shopify.com/altfield">Install</a>
+      </nav>
+    </div>
+    <h1>That page is not here</h1>
+    <p class="lede">Nothing at this address. It may have moved, or the link may have been wrong to begin with. Everything the site has is listed below.</p>
+    <div class="cta-row">
+      <a class="btn" href="/">Go to the homepage</a>
+      <a class="btn btn-ghost" href="/sample/">See a sample run</a>
+    </div>
+  </div>
+</header>
+
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow">Every page on this site</span>
+    <ul class="sitelinks">
+      <li><a href="/">What Altfield does, the four plans, and what leaves your store</a></li>
+      <li><a href="/about/">Why it was built, on a catalogue of about 50,000 SKUs</a></li>
+      <li><a href="/compare/">The three ways of doing this, and where Altfield loses</a></li>
+      <li><a href="/compare/lumi-catalog/">Altfield compared with Lumi Catalog</a></li>
+      <li><a href="/compare/tinyseo/">Altfield compared with TinySEO</a></li>
+      <li><a href="/sample/">Four screens from a real run</a></li>
+      <li><a href="/changelog/">What has changed, dated</a></li>
+    </ul>
+    <p class="pricing-note">If a link on this site brought you here, it is our mistake and worth telling us about: <a href="mailto:info@nkd.ie">info@nkd.ie</a>.</p>
+  </div>
+</section>
+
+<footer class="band">
+  <div class="wrap">
+    <span class="legal">Altfield is made by NKD&nbsp;Pizza&nbsp;LTD, trading as NKD&nbsp;Software, Dublin, Ireland.</span>
+    <nav aria-label="Footer">
+      <a href="/about/">About</a>
+      <a href="/compare/">Compare</a>
+      <a href="/compare/lumi-catalog/">vs Lumi</a>
+      <a href="/compare/tinyseo/">vs TinySEO</a>
+      <a href="/sample/">Sample run</a>
+      <a href="/changelog/">Changelog</a>
+      <a href="https://app.altfield.io/privacy">Privacy</a>
+      <a href="mailto:info@nkd.ie">info@nkd.ie</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
