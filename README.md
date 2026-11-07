@@ -12,5 +12,10 @@ images by `scripts/make-site-images.py`. They are ordinary files under
 `assets/` rather than inlined data URIs, so a crawler can see them and a
 browser can cache them between pages.
 
-All transactions go through the Shopify App Store. This site takes no payments,
-sets no cookies and collects no data.
+All transactions go through the Shopify App Store. This site takes no payments.
+
+It carries HeyCatch analytics, installed from https://heycatch.ai/agents.md
+and configured in `site/build.py`. The SDK autocaptures pageviews and clicks,
+and sets a first-party cookie plus localStorage and sessionStorage entries
+holding a device id, so the site is no longer cookie-free. There is no
+consent banner in front of it.

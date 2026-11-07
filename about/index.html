@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'sha256-OAPmL7v7uJrSttzwr6uA5PracoW9D+XumoJwOlZifuY=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-QrPB2I3DzLHX4267E0WO52NQSIUFU8W/OboopMTq08k=' https://esm.sh https://in.heycatch.ai; connect-src https://in.heycatch.ai; style-src 'sha256-OAPmL7v7uJrSttzwr6uA5PracoW9D+XumoJwOlZifuY=' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>About Altfield — built for a 50,000-SKU catalogue</title>
 <meta name="description" content="Altfield was built to fill the missing SEO fields on our own Shopify store of about 50,000 SKUs, and run on it before it was sold to anyone. Why approval, product-based pricing and free reverts are the way they are.">
@@ -17,6 +17,19 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://altfield.io/assets/og.png">
+<script type="module">
+import { analytics } from 'https://esm.sh/@heycatch/sdk@0.8.5';
+
+analytics.init({
+  projectKey: 'hck_pk_uNpdBqaRMH-KZ_TIHQXh0kx_90ecyB_a',
+  site: 'landing',
+  requestBatching: false,
+  install: {
+    framework: 'web',
+    agent: 'claude-code',
+  },
+});
+</script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://altfield.io/#organization","name":"NKD Software","legalName":"NKD Pizza LTD","url":"https://altfield.io","logo":"https://altfield.io/assets/og.png","email":"info@nkd.ie","address":{"@type":"PostalAddress","addressLocality":"Dublin","addressCountry":"IE"},"contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"info@nkd.ie","url":"https://altfield.io/about/#contact","availableLanguage":"English"},"sameAs":["https://apps.shopify.com/altfield"]}]}</script>
